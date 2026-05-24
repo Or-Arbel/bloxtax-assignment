@@ -1,73 +1,95 @@
-# Bloxtax — Full-stack Technical Assignment
+# Bloxtax Technical Assignment
 
-Build a single-page application that renders crypto transaction data stored in the provided SQLite database.
-
----
+Single-page application for viewing crypto transactions stored in a SQLite database.
 
 ## Overview
 
-Your task is to build one page containing a data table over the `Transactions` dataset. The database is already populated and shipped with this repository — no external data source or seeding step is required.
+This project displays cryptocurrency transaction data in a responsive table interface with server-side pagination and export functionality.
 
-You may use the included starter stack or any other stack of your choice, as long as the deliverable meets the requirements below and consumes the same dataset.
+The application was built using the provided Bun + React starter stack and consumes the existing SQLite database included in the repository.
 
----
+## Features
 
-## Requirements
+### Implemented
 
-### Required
+- Transactions table view
+- Server-side pagination
+- Responsive layout for desktop and mobile
+- Export to CSV/Excel-compatible file
+- SQLite integration using the provided dataset
 
-- **Data table** — display crypto transactions in a tabular view on a single page.
-- **Server-side pagination or infinite scroll** — data must be fetched in pages from the server; the full dataset must not be loaded into the client at once.
-- **Excel export** — provide an option to export the data (current view or full dataset) to a spreadsheet file. This must be implemented **without any third-party dependencies** — no `xlsx`, `exceljs`, `sheetjs`, or similar libraries. Write the file format directly.
-- **Responsive layout** — the page must be usable on both desktop and mobile viewports.
+### Notes
 
-### Nice to have
+- Pagination is handled on the server side using paged database queries.
+- Excel export was implemented without external spreadsheet libraries, according to the assignment requirements.
 
-- Column filtering.
-- Column sorting.
+## Tech Stack
 
----
+| Layer | Technology |
+|---|---|
+| Runtime | Bun |
+| Frontend | React 19 |
+| Styling | Tailwind CSS |
+| Database | SQLite |
+| ORM | Drizzle ORM |
 
-## Provided starter
+## Getting Started
 
-The repository contains an optional starter stack:
+### Prerequisites
 
-| Layer    | Technology                                      |
-| -------- | ----------------------------------------------- |
-| Runtime  | [Bun](https://bun.sh)                           |
-| Frontend | React 19, served via `Bun.serve()` HTML imports |
-| Styling  | Tailwind CSS v4, shadcn/ui primitives           |
-| Database | SQLite via `bun:sqlite` + Drizzle ORM           |
-| Bundler  | Built into Bun — no Vite or Webpack             |
-
-### Getting started
-
-**Prerequisites:** Bun ≥ 1.3 — install from [bun.sh](https://bun.sh).
+Install Bun:
 
 ```bash
-# Install dependencies
-bun install
+curl -fsSL https://bun.sh/install | bash
+```
 
-# Start the development server (with HMR)
+Or download from:
+https://bun.sh
+
+---
+
+### Install dependencies
+
+```bash
+bun install
+```
+
+### Run the development server
+
+```bash
 bun run dev
 ```
 
-The app will be available at `http://localhost:3000`.
+The application will be available at:
 
-`.env` is loaded automatically by Bun. The database file is committed to the repository at `src/api/database/database.db` and is ready to use — no migration or seeding is needed to get started.
+```bash
+http://localhost:3000
+```
 
----
+## Database
 
-## Using your own stack
+The SQLite database is already included in the repository:
 
-You may use any framework, runtime. The following constraints apply regardless of the stack chosen:
+```bash
+src/api/database/database.db
+```
 
-- The same `database.db` file (or an equivalent import of the same data) must be used.
-- All items in the **Required** section above must be met.
-- The zero-dependency rule for Excel export applies unconditionally.
+No migration or seeding is required.
 
----
+## Project Structure
 
-## Deliverable
+The project contains:
 
-A runnable project with a `README` that explains how to install and start it.
+- Frontend React application
+- API routes served with Bun
+- SQLite database access layer
+- CSV export utility
+
+## Future Improvements
+
+Potential improvements that could be added:
+
+- Column sorting
+- Column filtering
+- Improved mobile table interactions
+- Advanced export options
