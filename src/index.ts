@@ -1,8 +1,8 @@
 import { serve } from "bun";
 import { count, desc } from "drizzle-orm";
 import index from "./index.html";
-import { db } from "./api/database";
-import { transactions } from "./api/database/schema";
+import { db } from "./api/db";
+import { transactions } from "./api/db/schema";
 
 const server = serve({
   port: 3000,

@@ -71,7 +71,7 @@ http://localhost:3000
 The SQLite database is already included in the repository:
 
 ```bash
-src/api/database/database.db
+src/api/db/database.db
 ```
 
 No migration or seeding is required.

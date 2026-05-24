@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { DataTable } from "@/components/DataTable";
-import { Pagination } from "@/components/Pagination";
+import { DataTable } from "@/components/transactions/DataTable";
+import { Pagination } from "@/components/transactions/Pagination";
 import { Button } from "@/components/ui/button";
 import { downloadTransactionsCsv } from "@/lib/exportTransactionsCsv";
 import type { Transaction } from "@/types/transaction";
